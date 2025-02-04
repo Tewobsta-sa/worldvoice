@@ -1,3 +1,7 @@
+<?php 
+include 'backend/db.php'; // Connect to the database
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,99 +87,40 @@
       </div><!-- End Section Title -->
 
       <div class="container">
+        <!-- Form to Create a New Post -->
+        <section class="create-post">
+            <h2>Create a New Post</h2>
+            <form action="backend/create.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="title" placeholder="Post Title" required><br>
+                <textarea name="content" placeholder="Post Content" required></textarea><br>
+                <input type="file" name="image" required><br>
+                <button type="submit">Create Post</button>
+            </form>
+        </section>
 
-        <div class="row gy-5">
+        <!-- Display Blog Posts -->
+        <section class="posts">
+            <h2>Recent Posts</h2>
+            <?php 
+            $sql = "SELECT * FROM posts ORDER BY created_at DESC";
+            $result = $conn->query($sql);
 
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
-                <span class="post-date">November 30</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Online Learning for Better Teaching, 2024</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Adama</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Ethiopia</span>
-                  </div>
+            while($row = $result->fetch_assoc()):
+            ?>
+                <div class="post">
+                    <h3><?= $row['title'] ?></h3>
+                    <img src="backend/uploads/<?= $row['image'] ?>" alt="<?= $row['title'] ?>">
+                    <p><?= substr($row['content'], 0, 100) ?>...</p>
+                    <small>Posted on: <?= $row['created_at'] ?></small><br>
+                    <a href="post.php?id=<?= $row['id'] ?>">Read More</a>
                 </div>
+            <?php endwhile; ?>
+        </section>
+      </div>
 
-                <hr>
-                
-              </div>
+</body>
+</html>
 
-            </div>
-          </div><!-- End post item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt="">
-                <span class="post-date">September 5</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Establishment of Ethiopia Youth Council 2021</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Economic Commission for </span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Africa (ECA)</span>
-                  </div>
-                </div>
-
-                <hr>
-
-               
-              </div>
-
-            </div>
-          </div><!-- End post item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
-                <span class="post-date">September 04</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">World Voice students on 'Bego Sew' award on,2022.</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Lisa Hunter</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
-                  </div>
-                </div>
-
-                <hr>
-
-                
-              </div>
-
-            </div>
-          </div><!-- End post item -->
-
-        </div>
 
       </div>
 
