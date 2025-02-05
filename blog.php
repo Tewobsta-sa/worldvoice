@@ -52,7 +52,7 @@ include 'backend/db.php'; // Connect to the database
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="blog.php" class="active">Blog</a></li>
           <!--<li><a href="blog.html">Gallery</a></li>-->
           <li><a href="contact.html">Contact</a></li>
         </ul>  
@@ -87,20 +87,7 @@ include 'backend/db.php'; // Connect to the database
       </div><!-- End Section Title -->
 
       <div class="container">
-        <!-- Form to Create a New Post -->
-        <section class="create-post">
-            <h2>Create a New Post</h2>
-            <form action="backend/create.php" method="POST" enctype="multipart/form-data">
-                <input type="text" name="title" placeholder="Post Title" required><br>
-                <textarea name="content" placeholder="Post Content" required></textarea><br>
-                <input type="file" name="image" required><br>
-                <button type="submit">Create Post</button>
-            </form>
-        </section>
-
-        <!-- Display Blog Posts -->
         <section class="posts">
-            <h2>Recent Posts</h2>
             <?php 
             $sql = "SELECT * FROM posts ORDER BY created_at DESC";
             $result = $conn->query($sql);
@@ -110,9 +97,13 @@ include 'backend/db.php'; // Connect to the database
                 <div class="post">
                     <h3><?= $row['title'] ?></h3>
                     <img src="backend/uploads/<?= $row['image'] ?>" alt="<?= $row['title'] ?>">
-                    <p><?= substr($row['content'], 0, 100) ?>...</p>
+                    <p><?= nl2br($row['content']) ?></p>
                     <small>Posted on: <?= $row['created_at'] ?></small><br>
-                    <a href="post.php?id=<?= $row['id'] ?>">Read More</a>
+
+                    <!-- Read More Button -->
+                    <?php if (!empty($row['read_more_link'])): ?>
+                        <a href="<?= $row['read_more_link'] ?>" target="_blank">Read More</a>
+                    <?php endif; ?>
                 </div>
             <?php endwhile; ?>
         </section>
