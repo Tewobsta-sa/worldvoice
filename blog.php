@@ -42,7 +42,7 @@ include 'backend/db.php'; // Connect to the database
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="" style="width:100px;height:100px;">
+        <img src="assets/img/logo.png" alt="" style="width:100px;height:100px; transform: scale(2)">
         <!--<h1 class="sitename">UpConstruction</h1> <span>.</span>-->
       </a>
 
@@ -85,35 +85,44 @@ include 'backend/db.php'; // Connect to the database
         <h2>Our Events</h2>
         <p>Trainings and events we provided</p>
       </div><!-- End Section Title -->
+      <div class="posts" id="posts-container"></div>
 
-      <div class="container">
-        <section class="posts">
-            <?php 
-            $sql = "SELECT * FROM posts ORDER BY created_at DESC";
-            $result = $conn->query($sql);
+      <script>
+        async function fetchPosts() {
+            try {
+                let response = await fetch('http://localhost:8000/read.php');
+                let posts = await response.json();
+                
+                let postsContainer = document.getElementById('posts-container');
+                postsContainer.innerHTML = '';  // Clear any existing content
 
-            while($row = $result->fetch_assoc()):
-            ?>
-                <div class="post">
-                    <h3><?= $row['title'] ?></h3>
-                    <img src="backend/uploads/<?= $row['image'] ?>" alt="<?= $row['title'] ?>">
-                    <p><?= nl2br($row['content']) ?></p>
-                    <small>Posted on: <?= $row['created_at'] ?></small><br>
+                if (posts.length === 0) {
+                    postsContainer.innerHTML = '<p>No posts available.</p>';
+                    return;
+                }
 
-                    <!-- Read More Button -->
-                    <?php if (!empty($row['read_more_link'])): ?>
-                        <a href="<?= $row['read_more_link'] ?>" target="_blank">Read More</a>
-                    <?php endif; ?>
-                </div>
-            <?php endwhile; ?>
-        </section>
-      </div>
+                posts.forEach(post => {
+                    let postDiv = document.createElement('div');
+                    postDiv.classList.add('post');
+                    postDiv.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <img src="${post.image}" alt="${post.title}">
+                        <p>${post.content.replace(/\n/g, '<br>')}</p>
+                        <small>Posted on: ${post.created_at}</small><br>
+                        ${post.read_more_link ? `<a href="${post.read_more_link}" target="_blank">Read More</a>` : ''}
+                    `;
+                    postsContainer.appendChild(postDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+                document.getElementById('posts-container').innerHTML = '<p>Failed to load posts.</p>';
+            }
+        }
 
-</body>
-</html>
+        // Fetch posts when the page loads
+        window.onload = fetchPosts;
+</script>
 
-
-      </div>
 
     </section><!-- /Recent Blog Posts Section -->
 
