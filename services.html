@@ -50,7 +50,7 @@
           <li><a href="program.html">program</a></li>
           <li><a href="projects.html">Projects</a></li> 
           <li><a href="blog.php">Blog</a></li>
-          <!--<li><a href="blog.html">Gallery</a></li>-->
+          <!--<li><a href="blog.php">Gallery</a></li>-->
           <li><a href="contact.html">Contact</a></li>
         </ul>  
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -173,64 +173,53 @@
 
     <!-- Alt Services 2 Section -->
     <section id="alt-services-2" class="alt-services-2 section">
-
-      <div class="container">
-
-        <div class="row justify-content-around gy-4">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-            <h3>Traninigs</h3>
-            <p>Providing training for students and teachers about World Voice requires a multifaceted approach that considers the diverse needs and learning styles of both groups.</p>
-
-            <div class="row">
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-easel flex-shrink-0"></i>
-                <div>
-                  <h4>Global Citizenship</h4>
-                  <p>Understanding global interconnectedness, diverse perspectives, and responsible global engagement.</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-patch-check flex-shrink-0"></i>
-                <div>
-                  <h4>Multilingualism and Communication</h4>
-                  <p>Developing skills in multiple languages and effectively communicating across cultures.</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-brightness-high flex-shrink-0"></i>
-                <div>
-                  <h4>Digital Literacy & Global Communication Tools</h4>
-                  <p>Utilizing technology to connect with global communities and share information effectively.</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-brightness-high flex-shrink-0"></i>
-                <div>
-                  <h4>Advocacy and Social Action</h4>
-                  <p>Using one's voice to advocate for global issues and participate in positive social change.</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-            </div>
-
-          </div>
-
-          <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/features-3-2.jpg" alt="">
-          </div>
-
-        </div>
-
+      <div style="text-align: center;">
+        <h2>Trainings</h2>
+        <p>
+          Providing training for students and teachers about World Voice requires a multifaceted approach that considers the diverse needs and learning styles of both groups.
+        </p>
       </div>
-
-    </section><!-- /Alt Services 2 Section -->
-
+        
+        <div class="noContainer">
+        <div class="component-section">
+          <ul class="icon-list container">
+            <li>
+              <div class="icon-container" onclick="showDetails(this)" data-title="Global Citizenship" data-description="Understanding global interconnectedness, diverse perspectives, and responsible global engagement.">
+                <img src="assets/img/global citezenship.png" alt="" style="height: 100px;">
+                <span class="icon-title">Global Citizenship</span>
+              </div>
+            </li>
+            <li>
+              <div class="icon-container" onclick="showDetails(this)" data-title="Multilingualism and Communication" data-description="Developing skills in multiple languages and effectively communicating across cultures.">
+                <img src="assets/img/multilingual.png" alt="" style="height: 100px;">
+                <span class="icon-title">Multilingualism and Communication</span>
+              </div>
+            </li>
+            <li>
+              <div class="icon-container" onclick="showDetails(this)" data-title="Digital Literacy & Global Communication Tools" data-description="Utilizing technology to connect with global communities and share information effectively.">
+                <img src="assets/img/digital literacy.png" alt="" style="height: 100px;">
+                <span class="icon-title">Digital Literacy & Global Communication Tools</span>
+              </div>
+            </li>
+            <li>
+              <div class="icon-container" onclick="showDetails(this)" data-title="Advocacy and Social Action" data-description="Using one's voice to advocate for global issues and participate in positive social change.">
+               <img src="assets/img/advocacy.png" alt="" style="height: 100px;">
+                <span class="icon-title">Advocacy and Social Action</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     
+      <!-- Floating detail box -->
+      <div id="floating-details" class="floating-details">
+        <span class="close" onclick="hideDetails()">&times;</span>
+        <h4 id="detail-title"></h4>
+        <p id="detail-description"></p>
+      </div>
+    </section>
+  
+
 
 
   </main>
@@ -262,7 +251,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">Gallery</a></li>
+            <li><a href="blog.php">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>

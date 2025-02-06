@@ -167,3 +167,20 @@
   new PureCounter();
 
 })();
+
+  function showDetails(element) {
+  const title = element.getAttribute("data-title");
+  const description = element.getAttribute("data-description");
+
+  const floatingDetails = document.getElementById("floating-details");
+  document.getElementById("detail-title").textContent = title;
+  document.getElementById("detail-description").textContent = description;
+
+  // Show the floating details box
+  floatingDetails.style.display = "block";
+}
+
+function hideDetails() {
+  const floatingDetails = document.getElementById("floating-details");
+  floatingDetails.style.display = "none";
+}
