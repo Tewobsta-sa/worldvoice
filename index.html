@@ -24,9 +24,77 @@
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Swiper container */
+    .swiper {
+      width: 100%;
+      height: 300px;
+    }
+  
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .swiper-slide:hover {
+      transform: scale(1.05);
+    }
+  
+    .service-icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+  
+    .service-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    .service-description {
+      color: #555;
+      font-size: 16px;
+      max-width: 80%;
+    }
+  
+    .service-btn {
+      margin-top: 15px;
+      padding: 8px 15px;
+      font-size: 16px;
+      color: white;
+      background: #feb900;;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+  
+    .service-btn:hover {
+      background: #d89f02;;;
+      color: #fff;
+    }
+  
+    /* Navigation Buttons */
+    .swiper-button-next, .swiper-button-prev {
+      color: #feb900 !important;
+    }
+  
+    /* Pagination Dots */
+    .swiper-pagination-bullet {
+      background: #feb900 !important;
+    }
+  </style>
 
   
 </head>
@@ -277,89 +345,75 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-backpack3-fill"></i>
-              </div>
-              <h3>Integrating Technology in education</h3>
-              <p>Integrating technology in education involves thoughtfully incorporating digital tools and resources into teaching and learning to enhance student outcomes and engagement.</p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+              <i class="bi bi-backpack3-fill service-icon text-primary"></i>
+              <h4 class="service-title">Integrating Technology in Education</h4>
+              <p class="service-description">Enhancing learning through digital tools and AI-driven solutions.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel2-fill"></i>
-              </div>
-              <h3>Arts</h3>
-              <p>Incorporating art across all subjects to enhance learning and create a more engaging and stimulating educational environment.</p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+      
+            <div class="swiper-slide">
+              <i class="bi bi-easel2-fill service-icon text-danger"></i>
+              <h4 class="service-title">Arts</h4>
+              <p class="service-description">Encouraging creative expression through various artistic mediums.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-tools"></i>
-              </div>
-              <h3>21st Century skills</h3>
-              <p>21st-century skills are the abilities needed to succeed in today's rapidly changing world.</p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+      
+            <div class="swiper-slide">
+              <i class="bi bi-tools service-icon text-warning"></i>
+              <h4 class="service-title">21st Century Skills</h4>
+              <p class="service-description">Developing critical thinking, collaboration, and communication skills.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-people-fill"></i>
-              </div>
-              <h3>Socila Intelligence</h3>
-              <p>Social intelligence is a valuable asset in all aspects of life, from personal relationships and teamwork to leadership roles and career success.</p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+      
+            <div class="swiper-slide">
+              <i class="bi bi-people-fill service-icon text-success"></i>
+              <h4 class="service-title">Social Intelligence</h4>
+              <p class="service-description">Fostering empathy, teamwork, and leadership for better communication.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-tornado"></i>
-              </div>
-              <h3>Climate Action</h3>
-              <p>Climate action encompasses the efforts undertaken to mitigate climate change and adapt to its effects.</p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+      
+            <div class="swiper-slide">
+              <i class="bi bi-tornado service-icon text-info"></i>
+              <h4 class="service-title">Climate Action</h4>
+              <p class="service-description">Promoting sustainability and eco-friendly initiatives for a better future.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-person-arms-up"></i>
-              </div>
-              <h3>Mental Health</h3>
-              <p>is a vital aspect of overall well-being. Open conversations, reduced stigma, and readily available support systems are crucial for fostering a society that prioritizes and protects mental health for everyone.</p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+      
+            <div class="swiper-slide">
+              <i class="bi bi-person-arms-up service-icon text-secondary"></i>
+              <h4 class="service-title">Mental Health</h4>
+              <p class="service-description">Raising awareness and providing support for mental well-being.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-laptop-fill"></i>
-              </div>
-              <h3>Online Learning</h3>
-              <p>is the use of electronic media and information and communication technologies (ICT) in education. </p>
-              <a href="services.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+      
+            <div class="swiper-slide">
+              <i class="bi bi-laptop-fill service-icon text-dark"></i>
+              <h4 class="service-title">Online Learning</h4>
+              <p class="service-description">Expanding educational access through virtual platforms and e-learning.</p>
+              <a href="services.html" class="service-btn">Read more</a>
             </div>
-          </div><!-- End Service Item -->
-
+      
+          </div>
+          
+          <!-- Pagination and Navigation -->
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
-
       </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
     </section><!-- /Services Section -->
 
@@ -777,7 +831,7 @@
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">WVAAE Team</a>
+        Designed by <a href=# >WVAAE Team</a>
       </div>
     </div>
 
@@ -798,6 +852,29 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true, 
+      autoplay: {
+        delay: 2000, 
+        disableOnInteraction: false, 
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      effect: "fade", 
+      fadeEffect: {
+        crossFade: true
+      }
+    });
+  </script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
