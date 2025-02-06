@@ -30,7 +30,8 @@
 
   <style>
   
-  /* Digital Scout Program Page Styles */
+  
+/* Digital Scout Program Page Styles */
 .digital-scout .program-overview img {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -38,6 +39,10 @@
 
 .digital-scout .intervention-area {
   margin-bottom: 60px;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
 }
 
 .digital-scout .intervention-area h3 {
@@ -56,6 +61,8 @@
 .timeline {
   position: relative;
   padding-left: 30px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .timeline::before {
@@ -70,7 +77,8 @@
 
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  padding-right: 20px;
 }
 
 .timeline-icon {
@@ -177,6 +185,117 @@
   line-height: 1.6;
 }
 
+/* Progress Steps */
+.progress-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+  min-width: 50px;
+  height: 50px;
+  background: var(--surface-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.step-content p {
+  font-size: 16px;
+  color: var(--default-color);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.progress {
+  height: 10px;
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+/* Innovation Wheel */
+.innovation-wheel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.wheel-item {
+  padding: 20px;
+  background: var(--surface-color);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wheel-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wheel-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--surface-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accent-color);
+  margin: 0 auto 15px;
+}
+
+.wheel-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.wheel-content p {
+  font-size: 16px;
+  color: var(--default-color);
+  line-height: 1.6;
+}
+
 /* Image Grid Layout */
 .image-grid {
   display: grid;
@@ -231,118 +350,157 @@
 
 .image-item .overlay h4,
 .image-item .overlay p {
-  color: #ffffff !important; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Bridging the Digital Divide - Progress Steps */
-.progress-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.step-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--surface-color);
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: var(--accent-color);
-}
-
-.step-content {
-  flex: 1;
-}
-
-.step-content h4 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--heading-color);
-}
-
-.step-content p {
-  font-size: 16px;
-  color: var(--default-color);
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.progress {
-  height: 10px;
-  background: color-mix(in srgb, var(--accent-color), transparent 80%);
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  background: var(--accent-color);
-  border-radius: 5px;
-  transition: width 0.5s ease;
-}
-
-/* Fostering Innovation - Innovation Wheel */
-.innovation-wheel {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* Section Title Adjustments */
+.section-title {
   text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.wheel-item {
-  padding: 20px;
-  background: var(--surface-color);
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Responsive Grid Layouts */
+@media (max-width: 992px) {
+  .innovation-wheel,
+  .hover-boxes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .program-overview .row {
+    flex-direction: column;
+  }
+
+  .program-overview img {
+    margin-bottom: 30px;
+  }
 }
 
-.wheel-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+  .innovation-wheel,
+  .hover-boxes,
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-content {
+    margin-left: 30px;
+  }
+
+  .step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-icon {
+    margin-bottom: 15px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .intervention-area {
+    padding: 0 15px;
+  }
 }
 
-.wheel-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--surface-color);
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: var(--accent-color);
-  margin: 0 auto 15px;
+
+@media (max-width: 576px) {
+
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .program-overview img {
+    height: auto;
+  }
+
+  .image-item img {
+    height: 250px;
+  }
 }
 
-.wheel-content h4 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--heading-color);
+/* Additional Responsive Improvements */
+@media (max-width: 480px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    left: -25px;
+  }
+
+  .step-content h4,
+  .timeline-content h4 {
+    font-size: 18px;
+  }
+
+  .wheel-item,
+  .hover-box {
+    padding: 15px;
+  }
+
+  .wheel-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
 
-.wheel-content p {
-  font-size: 16px;
-  color: var(--default-color);
-  line-height: 1.6;
-}
-.tit{
-  margin-bottom: 50px;
+/* Animation Enhancements */
+.image-item,
+.wheel-item,
+.step,
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading states */
+.image-item img {
+  transition: all 0.3s ease;
+}
+
+.image-item img.loading {
+  filter: blur(5px);
+}
+
+.btn:focus,
+.image-item:focus-within {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-item img,
+  .wheel-item,
+  .hover-box,
+  .btn {
+    transition: none;
+  }
+}
 
   </style>
 
@@ -548,38 +706,38 @@
 <!-- End Fostering Innovation Section -->  
 
           <!-- Project 4: STEM Labs -->
-           <section>
-          <div class="intervention-area" data-aos="fade-up" data-aos-delay="500">
-            <div class=" section-title">
-            <h2><i class="bi bi-gear icon"></i> STEM Labs</h2>
-          </div>
-            <div class="image-grid">
-              <div class="image-item">
-                <img src="assets/img/program/program2.png" alt="Student-Centered Learning">
-                <div class="overlay">
-                  <h4>Student-Centered</h4>
-                  <p>Students engage in hands-on activities, experiments, and projects.</p>
+          <section class="section ">
+            <div class="container">
+              <div class="intervention-area" data-aos="fade-up" data-aos-delay="500">
+                <div class="section-title">
+                  <h2><i class="bi bi-gear icon"></i> STEM Labs</h2>
                 </div>
-              </div>
-              <div class="image-item">
-                <img src="assets/img/program/program1.jpg"alt="Exploration and Discovery">
-                <div class="overlay">
-                  <h4>Exploration and Discovery</h4>
-                  <p>Students explore, investigate, and discover concepts on their own.</p>
-                </div>
-              </div>
-              <div class="image-item">
-                <img src="assets/img/program/program3.webp" alt="Coding and Programming">
-                <div class="overlay">
-                  <h4>Coding and Programming</h4>
-                  <p>Students learn coding and programming concepts for STEM fields.</p>
+                <div class="image-grid">
+                  <div class="image-item">
+                    <img src="assets/img/program/program2.png" alt="Student-Centered Learning">
+                    <div class="overlay">
+                      <h4>Student-Centered</h4>
+                      <p>Students engage in hands-on activities, experiments, and projects.</p>
+                    </div>
+                  </div>
+                  <div class="image-item">
+                    <img src="assets/img/program/program1.jpg" alt="Exploration and Discovery">
+                    <div class="overlay">
+                      <h4>Exploration and Discovery</h4>
+                      <p>Students explore, investigate, and discover concepts on their own.</p>
+                    </div>
+                  </div>
+                  <div class="image-item">
+                    <img src="assets/img/program/program3.webp" alt="Coding and Programming">
+                    <div class="overlay">
+                      <h4>Coding and Programming</h4>
+                      <p>Students learn coding and programming concepts for STEM fields.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div><!-- End Project 4 -->
-        </div><!-- End Intervention Areas -->
-      </div>
-           </section>
+          </section>
    <!-- End Digital Scout Program Section -->
   
   </main>
