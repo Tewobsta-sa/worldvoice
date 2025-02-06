@@ -31,7 +31,6 @@ include 'backend/db.php'; // Connect to the database
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
  
 </head>
 
